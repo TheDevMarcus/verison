@@ -1,8 +1,17 @@
 [
   {
+    "title": "Tab Cloaker",
+    "badge": "PREVIEW",
+    "message": "Heres a quick preview of the tab cloaker!",
+    "image": "https://github.com/TheDevMarcus/verison/blob/main/Screenshot%202025-12-24%2012.49.31%20AM.png?raw=true",
+    "layout": "bottom",     
+    "author": "Chip Hill",
+    "color": "#FFFF00" 
+  },
+{
     "title": "System Config Update #2",
     "badge": "INFO",
-    "message": "With the System Config update right around the corner, we are targeting a January 8th release date! We want to give you a sneak peek at what’s coming: first, themes will allow you to customize your home screen and more. Second, we're adding a cloaker, letting you give your about:blank tab any title or logo.",
+    "message": "With the System Config update right around the corner, we are targeting a January 15th release date! We want to give you a sneak peek at what’s coming: first, themes will allow you to customize your home screen and more. Second, we're adding a cloaker, letting you give your about:blank tab any title or logo.",
     "image": "https://media1.tenor.com/m/5qbofo9sJsgAAAAd/my-mom-is-kinda-homeless-ishowspeed.gif",
     "layout": "right",     
     "author": "Chip Hill",
