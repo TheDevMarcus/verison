@@ -16,12 +16,5 @@
     "layout": "side",     
     "author": "Chip Hill",
     "color": "#ffa500" 
-  },
-  {
-    "title": "Project Status #1",
-    "badge": "NEW",
-    "message": "The update is going well and is expected to be coming super soon!",
-    "author": "Chip Hill",
-    "color": "#00f2ea"
   }
 ]
