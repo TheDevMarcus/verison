@@ -1,8 +1,16 @@
 [
   {
+    "title": "Emergency Patch",
+    "badge": "ALERT",
+    "message": "We found a bug in the protocol. It is now fixed.",
+    "author": "Chip Hill",
+    "color": "#ff0050" 
+  },
+  {
     "title": "Project Status #1",
     "badge": "NEW",
     "message": "The update is going well and is expected to be coming super soon!",
-    "author": "Chip Hill"
+    "author": "Chip Hill",
+    "color": "#00f2ea"
   }
 ]
