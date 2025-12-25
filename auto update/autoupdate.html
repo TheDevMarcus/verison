@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #0f172a;
+            color: white;
+            font-family: 'Inter', -apple-system, sans-serif;
+            overflow-x: hidden;
+        }
+
+        #loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #0f172a;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top-color: #38bdf8;
+            animation: spin 1s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #94a3b8;
+        }
+
+        #main-content {
+            opacity: 0;
+            transition: opacity 0.8s ease-in;
+        }
+
+        #main-content.loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loader-container">
+        <div class="spinner"></div>
+        <div class="loading-text">Initializing...</div>
+    </div>
+
+    <div id="main-content"></div>
+
+    <script>
+        const RAW_URL = 'https://raw.githubusercontent.com/TheDevMarcus/verison/refs/heads/main/auto%20update/v1';
+
+        async function fetchAndInject() {
+            const container = document.getElementById('main-content');
+            const loader = document.getElementById('loader-container');
+
+            try {
+                const response = await fetch(RAW_URL);
+                if (!response.ok) throw new Error();
+                const htmlString = await response.text();
+                const parser = new DOMParser();
+                const externalDoc = parser.parseFromString(htmlString, 'text/html');
+
+                const styles = externalDoc.querySelectorAll('link[rel="stylesheet"], style');
+                styles.forEach(style => document.head.appendChild(style.cloneNode(true)));
+
+                container.innerHTML = externalDoc.body.innerHTML;
+
+                const scripts = externalDoc.querySelectorAll('script');
+                for (const oldScript of scripts) {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => {
+                        newScript.setAttribute(attr.name, attr.value);
+                    });
+                    newScript.textContent = oldScript.textContent;
+                    document.body.appendChild(newScript);
+                }
+
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    loader.style.visibility = 'hidden';
+                    container.classList.add('loaded');
+                }, 600);
+
+            } catch (error) {
+                document.querySelector('.loading-text').innerText = 'Error Loading Version';
+                document.querySelector('.loading-text').style.color = '#ef4444';
+            }
+        }
+
+        fetchAndInject();
+    </script>
+</body>
+</html>
