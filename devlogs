@@ -1,29 +1,38 @@
 [
   {
+    "title": "NOVA Future Update",
+    "badge": "ANNOUNCEMENT",
+    "message": "As this year comes to an end, we want to thank everyone who has supported NOVA. Your support has helped us grow tremendously. We are excited to share that NOVA is officially funded by Blume, the creators and funders of Nooble Games. With this support, many changes are coming, and NOVA may evolve into a full game focused platform. While details are still being finalized, we’re excited for what’s ahead and hope you continue this journey with us. Wishing everyone a great New Year.",
+    "image": "https://github.com/TheDevMarcus/verison/blob/main/logos/decemberlogo.png?raw=true",
+    "layout": "bottom",
+    "author": "Chip Hill",
+    "color": "#00FFFF"
+  },
+  {
     "title": "Tab Cloaker",
     "badge": "PREVIEW",
     "message": "Heres a quick preview of the tab cloaker!",
     "image": "https://github.com/TheDevMarcus/verison/blob/main/Screenshot%202025-12-24%2012.49.31%20AM.png?raw=true",
-    "layout": "bottom",     
+    "layout": "bottom",
     "author": "Chip Hill",
-    "color": "#FFFF00" 
+    "color": "#FFFF00"
   },
-{
+  {
     "title": "System Config Update #2",
     "badge": "INFO",
     "message": "With the System Config update right around the corner, we are targeting a January release date! We want to give you a sneak peek at what’s coming: first, themes will allow you to customize your home screen and more. Second, we're adding a cloaker, letting you give your about:blank tab any title or logo.",
     "image": "https://media1.tenor.com/m/5qbofo9sJsgAAAAd/my-mom-is-kinda-homeless-ishowspeed.gif",
-    "layout": "right",     
+    "layout": "right",
     "author": "Chip Hill",
-    "color": "#FF69B4" 
+    "color": "#FF69B4"
   },
   {
     "title": "System Config Update",
     "badge": "BETA",
     "message": "We are rolling out system config settings to a select few, meaning it's right around the corner!",
     "image": "https://github.com/TheDevMarcus/verison/blob/main/logos/decemberlogo.png?raw=true",
-    "layout": "left",     
+    "layout": "left",
     "author": "Chip Hill",
-    "color": "#ffa500" 
+    "color": "#ffa500"
   }
 ]
