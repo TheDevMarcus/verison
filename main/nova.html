@@ -258,21 +258,17 @@ overflow: hidden;
 .log-body.layout-bottom { flex-direction: column; }
 
 .log-msg { font-size: 0.7rem; color: #b0b0b0; line-height: 1.5; margin: 0; flex: 1; font-weight: 300; }
-/* Updated Image Wrapper for Clickability */
 .log-img-wrap {
 border-radius: 8px; overflow: hidden;
 border: 1px solid rgba(255,255,255,0.1);
 flex-shrink: 0;
 box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-cursor: zoom-in; /* Change cursor to zoom icon */
+cursor: zoom-in; 
 position: relative;
 }
 .log-img-wrap img { display: block; width: 100%; height: auto; transition: 0.3s; }
 .log-card:hover .log-img-wrap img { transform: scale(1.05); }
-
-/* Added hover effect to indicate clickability */
 .log-img-wrap:hover { border-color: var(--primary); }
-
 .log-body.layout-left .log-img-wrap, .log-body.layout-right .log-img-wrap { width: 60px; height: 60px; }
 .log-body.layout-left .log-img-wrap img, .log-body.layout-right .log-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
 .log-author { display: flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 0.6rem; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 6px; }
@@ -302,7 +298,7 @@ input:checked + .slider:before { transform: translateX(22px); }
 .card-main.locked .locked-overlay { display: flex; animation: fadeIn 0.5s; }
 .locked-icon { font-size: 3rem; margin-bottom: 15px; color: var(--accent); text-shadow: 0 0 30px var(--accent); }
 
-/* --- NEW IMAGE VIEWER STYLES --- */
+
 #imgPreviewModal .img-view-content {
 max-width: 90vw;
 max-height: 85vh;
@@ -459,7 +455,7 @@ document.getElementById('newAppIcon').value='';
 }
 }
 
-// Function to handle Image Opening
+
 function openImage(url) {
 const modal = document.getElementById('imgPreviewModal');
 const img = document.getElementById('previewImageElement');
