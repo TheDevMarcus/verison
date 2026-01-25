@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>NOVA</title>
-<link rel="icon" type="image/png" href="https://github.com/TheDevMarcus/verison/blob/main/logos/decemberlogo.png?raw=true">
+<link rel="icon" type="image/png" href="https://i.ibb.co/ZR8kx20q/New-Project-1.png">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -202,7 +202,7 @@ input:focus {
     background: rgba(0,0,0,0.5);
     box-shadow: 0 0 0 3px var(--primary-dim), inset 0 2px 4px rgba(0,0,0,0.3);
 }
-button#igniteBtn {
+button#startBtn {
     width: 100%; padding: 16px;
     border-radius: 14px; border: none;
     background: linear-gradient(135deg, #222, #111);
@@ -215,21 +215,21 @@ button#igniteBtn {
     border: 1px solid rgba(255,255,255,0.1);
     flex-shrink: 0;
 }
-button#igniteBtn:not(:disabled) {
+button#startBtn:not(:disabled) {
     background: linear-gradient(135deg, #00f2ea 0%, #00a8a3 100%);
     box-shadow: 0 10px 30px rgba(0, 242, 234, 0.2);
     border: none;
     text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
-button#igniteBtn::before {
+button#startBtn::before {
     content: ''; position: absolute; top: 0; left: -100%;
     width: 100%; height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
     transform: skewX(-20deg); pointer-events: none; transition: 0s;
 }
-button#igniteBtn:not(:disabled):hover::before { left: 200%; transition: 0.75s; }
-button#igniteBtn:not(:disabled):hover { transform: translateY(-2px); box-shadow: 0 15px 35px rgba(0, 242, 234, 0.35); }
-button#igniteBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+button#startBtn:not(:disabled):hover::before { left: 200%; transition: 0.75s; }
+button#startBtn:not(:disabled):hover { transform: translateY(-2px); box-shadow: 0 15px 35px rgba(0, 242, 234, 0.35); }
+button#startBtn:disabled { opacity: 0.6; cursor: not-allowed; }
 .credits { margin-top: 15px; text-align: center; font-size: 0.65rem; color: rgba(255,255,255,0.2); letter-spacing: 1px; }
 .credits span { color: var(--text-muted); }
 .footer-links { margin-top: 5px; display: flex; justify-content: center; gap: 10px; }
@@ -453,8 +453,8 @@ input:checked + .slider:before { transform: translateX(22px); }
 <div class="glass-panel card-main" id="mainCard">
 <div class="locked-overlay">
 <div class="locked-icon">⚠</div>
-<h2 style="color: var(--accent); margin-bottom: 10px; font-family: 'Cinzel', serif; letter-spacing: 5px; font-size: 1.5rem;">SYSTEM OUTDATED</h2>
-<p style="color: #888; margin-bottom: 25px; line-height: 1.5; font-size: 0.9rem;">Security protocol mismatch. A manual patch is required to restore core functionality.</p>
+<h2 style="color: var(--accent); margin-bottom: 10px; font-family: 'Cinzel', serif; letter-spacing: 5px; font-size: 1.5rem;">VERISON OUTDATED</h2>
+<p style="color: #888; margin-bottom: 25px; line-height: 1.5; font-size: 0.9rem;"> Verison protocol mismatch. A manual patch is required to restore core functionality.</p>
 <a href="https://theonlynova.web.app" target="_blank" style="background: white; color: black; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 800; letter-spacing: 1px; box-shadow: 0 10px 30px rgba(255,255,255,0.15); transition: 0.3s; font-size: 0.8rem;">GET PATCH</a>
 </div>
 <div class="icon-btn" onclick="openSettings()">
@@ -463,13 +463,13 @@ input:checked + .slider:before { transform: translateX(22px); }
 <h1>NOVA</h1>
 <div class="tag">
 <div class="status-dot"></div>
-<span id="statusText">V. 1.0.0 | CONNECTING</span>
+<span id="statusText">V. 1.0.4 | CONNECTING</span>
 </div>
 <div class="apps-container" id="appsContainer"></div>
 <div class="input-wrap">
 <input id="url" placeholder="Target URL Protocol..." autocomplete="off">
 </div>
-<button id="igniteBtn" onclick="launch()" disabled>WAITING FOR NETWORK...</button>
+<button id="startBtn" onclick="launch()" disabled>WAITING FOR NETWORK...</button>
 <div class="credits">
 <div>Made by <span>Chip Hill</span></div>
 <div class="footer-links">
@@ -481,10 +481,10 @@ input:checked + .slider:before { transform: translateX(22px); }
 <div class="glass-panel card-logs">
 <div class="logs-header-area">
 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-DEV LOGS
+Developer Messages
 </div>
-<div class="logs-scroll-area" id="devLogsContainer">
-<div style="text-align:center; padding:20px; color:#666; font-size:0.75rem;">Loading feeds...</div>
+<div class="logs-scroll-area" id="DevMessagesContainer">
+<div style="text-align:center; padding:20px; color:#666; font-size:0.75rem;">Loading Messages...</div>
 </div>
 </div>
 </div>
@@ -549,7 +549,7 @@ DEV LOGS
 
 <div class="modal" id="addAppModal">
 <div class="modal-content">
-<h2 class="modal-header">NEW SHORTCUT</h2>
+<h2 class="modal-header">NEW APP</h2>
 <div class="setting-row"><label class="setting-label">Name</label><input id="newAppName" placeholder="App Name"></div>
 <div class="setting-row"><label class="setting-label">Target URL</label><input id="newAppUrl" placeholder="https://..."></div>
 <div class="setting-row"><label class="setting-label">Icon Image URL</label><input id="newAppIcon" placeholder="https://..."></div>
@@ -602,23 +602,44 @@ const DEFAULT_APPS = [
     {
         "name": "66",
         "url": "https://66-ez.github.io/",
-        "icon": "https://ui-avatars.com/api/?name=66&background=random&color=fff&bold=true&size=128"
+        "icon": "https://cdn.worldvectorlogo.com/logos/route-66-1.svg"
     },
     {
         "name": "Cool Games",
         "url": "https://coolunblockedgames.github.io/",
-        "icon": "https://ui-avatars.com/api/?name=Cool+Games&background=random&color=fff&bold=true&size=128"
+        "icon": "https://www.shutterstock.com/image-vector/modern-gear-circuit-vector-icon-600nw-2647106479.jpg"
     },
     {
         "name": "Slope Online",
         "url": "http://slope-online.github.io/",
-        "icon": "https://ui-avatars.com/api/?background=random&color=fff&name=Slope Online"
+        "icon": "https://slope2.online/upload/cache/upload/imgs/slope1-m240x240.jpg"
     },
     {
         "name": "Nyt Wordle",
         "url": "https://nytwordle.github.io/",
-        "icon": "https://ui-avatars.com/api/?background=random&color=fff&name=Nyt Wordle"
+        "icon": "https://static01.nyt.com/images/2022/03/02/crosswords/alpha-wordle-icon-new/alpha-wordle-icon-new-smallSquare252-v3.png?format=pjpg&quality=75&auto=webp&disable=upscale"
+    },
+    {
+        "name": "Reds Exploit Corner",
+        "url": "https://v2202412248092306146.luckysrv.de/",
+        "icon": "https://avatars.githubusercontent.com/u/124852579?s=280&v=4",
+    },
+    {
+        "name": "Youtube",
+        "url": "https://youtube.com",
+        "icon": "https://static.vecteezy.com/system/resources/thumbnails/018/930/572/small/youtube-logo-youtube-icon-transparent-free-png.png",
+    },
+    {
+        "name": "Class 76",
+        "url": "https://class-76.github.io/",
+        "icon": "https://icons.veryicon.com/png/o/miscellaneous/alan-ui/logo-game-controller-2.png"
+    },
+    {
+        "name": "Murder",
+        "url": "https://murder-unblocked.github.io/",
+        "icon": "https://play-lh.googleusercontent.com/BT7zrf4JNZj4pRV5YIRT4D0DydkuLEzVvnOwKmmOxuc1sbIUJyZbeaFOhjuLK4CXWFg"
     }
+
 ];
 
 const CLOAK_PRESETS = [
@@ -676,7 +697,7 @@ function renderApps() {
 
 function deleteApp(e, i) {
     e.stopPropagation();
-    if(confirm('Remove this shortcut?')) {
+    if(confirm('Remove this app?')) {
         userApps.splice(i,1);
         localStorage.setItem('novaApps', JSON.stringify(userApps));
         renderApps();
@@ -742,7 +763,7 @@ function importApps(event) {
 }
 
 function restoreDefaultApps() {
-    if (confirm('Restore default apps? This will remove all your custom shortcuts.')) {
+    if (confirm('Restore default apps? This will remove all your custom apps.')) {
         userApps = [...DEFAULT_APPS];
         localStorage.setItem('novaApps', JSON.stringify(userApps));
         renderApps();
@@ -820,8 +841,8 @@ function openImage(url) {
     modal.classList.add('show');
 }
 
-async function loadDevLogs() {
-    const container = document.getElementById('devLogsContainer');
+async function loadDevMessages() {
+    const container = document.getElementById('DevMessagesContainer');
     try {
         const res = await fetch("https://raw.githubusercontent.com/TheDevMarcus/verison/refs/heads/main/devlogs");
         if(!res.ok) throw new Error("Network response was not ok");
@@ -852,22 +873,22 @@ async function loadDevLogs() {
             </div>
             `}).join('');
     } catch(e) {
-        container.innerHTML = `<div style="text-align:center; padding:10px; color:#444; font-size:0.75rem;">Unable to load dev logs.</div>`;
+        container.innerHTML = `<div style="text-align:center; padding:10px; color:#444; font-size:0.75rem;">Unable to load Developer Messages.</div>`;
     }
 }
 
 async function verify() {
     const statusEl = document.getElementById('statusText');
-    const btn = document.getElementById('igniteBtn');
-    loadDevLogs();
+    const btn = document.getElementById('startBtn');
+    loadDevMessages();
     try {
         const res = await fetch("https://raw.githubusercontent.com/TheDevMarcus/verison/main/verison");
         const v = (await res.text()).trim();
         if (v === "1.0.3") {
             SYSTEM_LOCKED = false;
             btn.disabled = false;
-            btn.innerText = "IGNITE";
-            statusEl.innerText = `V ${v} | SYSTEM ONLINE`;
+            btn.innerText = "START";
+            statusEl.innerText = `V ${v} | ONLINE`;
             statusEl.style.color = "var(--primary)";
         } else {
             document.getElementById('mainCard').classList.add('locked');
@@ -877,8 +898,8 @@ async function verify() {
     } catch(e) {
         SYSTEM_LOCKED = false;
         btn.disabled = false;
-        btn.innerText = "IGNITE (OFFLINE)";
-        statusEl.innerText = "OFFLINE MODE | 1.0.0";
+        btn.innerText = "START (OFFLINE)";
+        statusEl.innerText = "OFFLINE MODE | 1.0.4";
     }
     renderApps();
 }
@@ -949,7 +970,7 @@ function launch() {
     </head>
     <body>
         <div class="nav-bar" id="nb">
-            <div class="trigger"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div>
+            <div class="trigger"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1=z"3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div>
             <div class="controls">
                 <button class="btn exit" onclick="window.close()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg></button>
                 <button class="btn" onclick="nav(-1)"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
@@ -975,8 +996,8 @@ let particles = [];
 function resize() { c.width = window.innerWidth; c.height = window.innerHeight; initParticles(); }
 function initParticles() {
     particles = [];
-    const count = window.innerWidth < 600 ? 40 : 100;
-    for(let i=0; i<count; i++) particles.push({ x: Math.random() * c.width, y: Math.random() * c.height, size: Math.random() * 2 + 0.5, speed: Math.random() * 0.5 + 0.2, opacity: Math.random() * 0.5 + 0.1 });
+    const count = window.innerWidth < 602380 ? 40 : 134200;
+    for(let i=0; i<count; i++) particles.push({ x: Math.random() * c.width, y: Math.random() * c.height, size: Math.random() * 2 + 0.125, speed: Math.random() * 0.5 + 0.4232, opacity: Math.random() * 0.5 + 0.1 });
 }
 function animate() {
     ctx.clearRect(0, 0, c.width, c.height);
